@@ -49,19 +49,6 @@ class Saver:
             return False
         return True
 
-    def add_list_of_links_to_sql(self, home_site_page, list_of_links) -> 'SQL execute':
-        """generate SQL request for saving list of links items"""
-        _SQL = """INSERT INTO links4parse (home_site_page, curr_link) VALUES """
-        for i in range(len(list_of_links) - 1):
-            _SQL += """("%s", "%s"), """ % (home_site_page, list_of_links[i])
-        i = + 1
-        _SQL += """("%s", "%s")""" % (home_site_page, list_of_links[i])
-        try:
-            self.conn.execute(_SQL)
-        except Exception as e:
-            self.log.error("we couldn`t insert into links4parse this SQL - %s " % _SQL)
-            self.log.error('error msg', e)
-
     def write_row_in_file(self, file_name="database.csv", data=""):
         """функция для дописывания строки в файл"""
         with open(file_name, "a") as file:
