@@ -1,4 +1,3 @@
-from db_classes.database_connector import UseDatabase
 from db_classes.saver import Saver
 from proxy_manager import ProxyManager
 import config as cfg
