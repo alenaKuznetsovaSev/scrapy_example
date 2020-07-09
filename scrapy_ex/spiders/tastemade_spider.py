@@ -1,7 +1,5 @@
 import scrapy
-from scrapy import Request
 from twisted.internet.error import TimeoutError, TCPTimedOutError
-
 import config as cfg
 import scrapy_ex
 

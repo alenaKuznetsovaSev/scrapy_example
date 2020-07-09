@@ -1,4 +1,3 @@
-import re
 import my_log
 import csv
 from sqlalchemy import create_engine
